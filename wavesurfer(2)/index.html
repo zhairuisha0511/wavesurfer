@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>wavesurfer.js | Playlist</title>
+
+        <!-- Bootstrap -->
+        <!--<link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/bootstrap-3.3.4.css">-->
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/ribbon.css" />
+		<style>
+			.list-group-item .badge{
+				float: inherit;
+			}
+			#newSpan{
+				position: absolute;
+				color: #000;
+				display: block;
+				padding: 2px 5px;
+				background: #fff;
+				z-index: 4;
+				right: -50px;
+				top: 50px;
+			}
+			.speedSpan{
+				font-size: 14px;
+				padding: 5px 10px;
+				cursor: pointer;
+			}
+			.speedStyle{
+				color: #428bca;
+				background: #fff;
+			}
+			#toggleMute{
+				background: url(toggleMute.png) no-repeat ;
+				background-size: 100% 100%;
+				/*background-color: #777;*/
+				width: 20px;
+				height: 20px;
+				display: inline-block;
+			}
+			.volumeLength{
+				display: inline-block!important;
+				width: 100px;
+				height: 5px;
+				background: #777;
+				position: relative;
+				
+			}
+			#volumeSpan{
+				background: #777;
+				height: 6px;
+				display: inline-block;
+				position: absolute;
+				left: 0;
+				top: 0;
+				border-radius: 10px;
+			}
+			.volume_span{
+			    width: 4px;
+			    height: 20px;
+			    display: inline-block;
+			    background: #777;
+			    position: absolute;
+			    right: 0;
+			    top: -6px;
+			}
+			
+		</style>
+        <!-- wavesurfer.js -->
+        <!--<script src="js/wavesurfer.min.js"></script>-->
+		<script src="js/wavesurfer.js"></script>
+        <!-- App -->
+        <script src="js/app.js"></script>
+        <script type="text/javascript" src="js/jquery.1.9.min.js" ></script>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="header">
+                <ul class="nav nav-pills pull-right">
+                    <li><a href="/"><i class="glyphicon glyphicon-home"></i></a></li>
+                </ul>
+
+                <h1 itemprop="name">wavesurfer.js Playlist Demo</h1>
+            </div>
+
+            <div id="demo">
+                <div class="row" style="margin: 30px 0">
+                    <div class="col-sm-10">
+                        <div id="waveform">
+                        
+                            <!-- Here be waveform -->
+                        </div>
+                    </div>
+
+                    <div class="col-sm-2">
+                        <button class="btn btn-success btn-block" id="playPause">
+                            <span id="play">
+                                <!--<i class="glyphicon glyphicon-play"></i>-->
+                                播放
+                            </span>
+
+                            <span id="pause" style="display: none">
+                                <!--<i class="glyphicon glyphicon-pause"></i>-->
+                                暂停
+                            </span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="list-group" id="playlist">
+                    <div  class="list-group-item" id="speedId" style="background: #428bca;">
+                    	<a href="jq22com.mp3" class="badge speedSpan">
+                        <!--<i class="glyphicon glyphicon-play"></i>-->
+                        开始
+                        </a>
+                        <label class="badge speedSpan" id="timeSpan" style="margin-top: 5px;"></label>&nbsp;&nbsp;&nbsp;
+                        <label style="color: #fff;">播放倍速：</label>
+                        <span class="badge speedSpan">0.5</span>
+                        <span class="badge speedSpan speedStyle ">1.0</span>
+                        <span class="badge speedSpan">1.5</span>
+                        <span class="badge speedSpan">2.0</span>
+                        <label id="toggleMute" class='badge' style="color: #fff;margin-left: 100px;"></label>
+                        <label class="badge volumeLength" id="volumeLength">
+                        	<span class="volume_span"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
